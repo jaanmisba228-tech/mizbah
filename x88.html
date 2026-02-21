@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mizu Gazi | Luxury Lifestyle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --brand: #000; --accent: #a45a47; --bg: #ffffff; }
+        * { margin:0; padding:0; box-sizing:border-box; font-family: 'Helvetica Neue', Arial, sans-serif; }
+        body { background: var(--bg); color: #333; padding-bottom: 80px; }
+
+        /* Announcement Bar */
+        .top-bar { background: #000; color: #fff; text-align: center; padding: 10px; font-size: 10px; letter-spacing: 2px; font-weight: bold; text-transform: uppercase; }
+
+        /* Navbar */
+        nav { background: white; padding: 15px; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
+        .logo { font-size: 24px; font-weight: 300; letter-spacing: 6px; text-transform: uppercase; text-align: center; flex: 1; }
+
+        /* Story Categories */
+        .cat-row { display: flex; overflow-x: auto; padding: 20px 10px; gap: 20px; scrollbar-width: none; }
+        .cat-row::-webkit-scrollbar { display: none; }
+        .cat-item { text-align: center; min-width: 80px; }
+        .cat-item img { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 1px solid #eee; padding: 2px; }
+        .cat-item p { font-size: 9px; margin-top: 8px; font-weight: bold; text-transform: uppercase; color: #555; }
+
+        /* Section Title */
+        .section-header { padding: 25px 15px 10px; }
+        .section-title { font-size: 15px; letter-spacing: 2px; font-weight: 300; text-transform: uppercase; border-left: 3px solid #000; padding-left: 10px; }
+
+        /* Grid */
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 0 15px; }
+        .card { position: relative; margin-bottom: 25px; }
+        .img-wrap { width: 100%; height: 260px; background: #f7f7f7; overflow: hidden; position: relative; }
+        .img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .badge { position: absolute; top: 10px; right: 10px; background: #d99c8b; color: white; padding: 4px 8px; font-size: 9px; font-weight: bold; }
+        .badge-blue { position: absolute; top: 10px; left: 0; background: #2b3891; color: white; padding: 4px 10px; font-size: 9px; font-weight: bold; text-transform: uppercase; }
+
+        .info { padding: 12px 5px; }
+        .p-name { font-size: 11px; font-weight: 500; text-transform: uppercase; margin-bottom: 4px; height: 32px; overflow: hidden; }
+        .p-price { font-size: 13px; font-weight: bold; color: var(--accent); }
+
+        .wa-btn { background: #000; color: white; border: none; width: 100%; padding: 12px; font-size: 10px; font-weight: bold; letter-spacing: 1.5px; margin-top: 10px; cursor: pointer; text-transform: uppercase; }
+
+        /* Bottom Nav */
+        .bottom-nav { position: fixed; bottom: 0; width: 100%; background: white; display: flex; justify-content: space-around; padding: 15px; border-top: 1px solid #eee; z-index: 2000; }
+        .nav-link { color: #000; text-decoration: none; font-size: 18px; text-align: center; opacity: 0.6; }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">WORLDWIDE SHIPPING • NEW DROPS LIVE</div>
+
+<nav>
+    <i class="fas fa-bars"></i>
+    <div class="logo">MIZU GAZI</div>
+    <div class="nav-icons"><i class="fas fa-shopping-bag"></i></div>
+</nav>
+
+<div class="cat-row">
+    <div class="cat-item"><img src="https://images.unsplash.com/photo-1535633302704-c02fbc4d2c31?w=200"><p>Jewellery</p></div>
+    <div class="cat-item"><img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=200"><p>Frames</p></div>
+    <div class="cat-item"><img src="https://images.unsplash.com/photo-1590739297397-4000305a41e9?w=200"><p>Gloves</p></div>
+    <div class="cat-item"><img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=200"><p>Heels</p></div>
+    <div class="cat-item"><img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=200"><p>Bags</p></div>
+</div>
+
+<div class="section-header">
+    <h2 class="section-title">The Jewellery Box</h2>
+</div>
+<div class="grid">
+    <div class="card">
+        <div class="img-wrap">
+            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=400">
+            <div class="badge-blue">Bestseller</div>
+        </div>
+        <div class="info">
+            <p class="p-name">Golden Hoop Statement Earrings</p>
+            <span class="p-price">₹899</span>
+            <button class="wa-btn" onclick="order('Golden Hoops', '899')">Order Now</button>
+        </div>
+    </div>
+    <div class="card">
+        <div class="img-wrap">
+            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400">
+            <div class="badge">Sale</div>
+        </div>
+        <div class="info">
+            <p class="p-name">Crystal Diamond Engagement Ring</p>
+            <span class="p-price">₹1,299</span>
+            <button class="wa-btn" onclick="order('Diamond Ring', '1299')">Order Now</button>
+        </div>
+    </div>
+    <div class="card">
+        <div class="img-wrap">
+            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400">
+        </div>
+        <div class="info">
+            <p class="p-name">Luxury Pearl Drop Necklace</p>
+            <span class="p-price">₹1,599</span>
+            <button class="wa-btn" onclick="order('Pearl Necklace', '1599')">Order Now</button>
+        </div>
+    </div>
+    <div class="card">
+        <div class="img-wrap">
+            <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?w=400">
+            <div class="badge-blue">New</div>
+        </div>
+        <div class="info">
+            <p class="p-name">Handcrafted Jhumkas - Mizu Gold</p>
+            <span class="p-price">₹749</span>
+            <button class="wa-btn" onclick="order('Mizu Gold Jhumkas', '749')">Order Now</button>
+        </div>
+    </div>
+</div>
+
+<div class="section-header">
+    <h2 class="section-title">Eyewear & Hands</h2>
+</div>
+<div class="grid">
+    <div class="card">
+        <div class="img-wrap">
+            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400">
+        </div>
+        <div class="info">
+            <p class="p-name">Translucent Fashion Frames</p>
+            <span class="p-price">₹1,445</span>
+            <button class="wa-btn" onclick="order('Translucent Frames', '1445')">Order Now</button>
+        </div>
+    </div>
+    <div class="card">
+        <div class="img-wrap">
+            <img src="https://images.unsplash.com/photo-1590739297397-4000305a41e9?w=400">
+        </div>
+        <div class="info">
+            <p class="p-name">Winter Velvet Gloves - Noir</p>
+            <span class="p-price">₹599</span>
+            <button class="wa-btn" onclick="order('Black Velvet Gloves', '599')">Order Now</button>
+        </div>
+    </div>
+</div>
+
+<div class="section-header">
+    <h2 class="section-title">Heels & More</h2>
+</div>
+<div class="grid">
+    <div class="card">
+        <div class="img-wrap">
+            <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=400">
+        </div>
+        <div class="info">
+            <p class="p-name">Classic Brown Mizu Pumps</p>
+            <span class="p-price">₹1,745</span>
+            <button class="wa-btn" onclick="order('Classic Brown Pumps', '1745')">Order Now</button>
+        </div>
+    </div>
+    <div class="card">
+        <div class="img-wrap">
+            <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?w=400">
+        </div>
+        <div class="info">
+            <p class="p-name">Pearl White Party Heels</p>
+            <span class="p-price">₹2,199</span>
+            <button class="wa-btn" onclick="order('White Party Heels', '2199')">Order Now</button>
+        </div>
+    </div>
+</div>
+
+<footer style="padding: 40px; text-align: center; background: #fafafa; margin-top: 20px;">
+    <h2 style="letter-spacing: 5px;">MIZU GAZI</h2>
+    <p style="font-size: 10px; color: #888; margin-top: 10px;">The Theater of Luxury Fashion.</p>
+</footer>
+
+<div class="bottom-nav">
+    <a href="#" class="nav-link"><i class="fas fa-home"></i></a>
+    <a href="#" class="nav-link"><i class="fas fa-search"></i></a>
+    <a href="#" class="nav-link"><i class="fas fa-shopping-bag"></i></a>
+    <a href="#" class="nav-link"><i class="far fa-user"></i></a>
+</div>
+
+<script>
+    function order(item, price) {
+        const phone = "9103803607";
+        const text = `*NEW ORDER - MIZU GAZI*%0A%0A*Category:* Premium Collection%0A*Item:* ${item}%0A*Price:* ₹${price}%0A%0AHi! I saw this on the website. Can I order this?`;
+        window.open(`https://wa.me/${phone}?text=${text}`);
+    }
+</script>
+
+</body>
+</html>
